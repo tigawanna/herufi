@@ -19,7 +19,9 @@ grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4
 ">
 {data?.products.map((item)=>{
     return(
-        <button className="h-full w-full aspect-square shadow-lg border rounded-lg
+        <button 
+        key={item.id}
+        className="h-full w-full aspect-square shadow-lg border rounded-lg
         hover:shadow-lg hover:scale-95 hover:shadow-slate-300
         flex flex-col items-center justify-center">
             <img src={item.thumbnail} className=" aspect-square md:w-[250px] "/>

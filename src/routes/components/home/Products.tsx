@@ -11,7 +11,7 @@ export const Products = ({}:ProductsProps) => {
         refetchOnReconnect: true,
     });
 
-console.log("data in productts ",data)
+
 return (
  <div className='w-[95%] h-full flex items-center justify-center'>
 <div className="w-full p-2
@@ -19,12 +19,18 @@ grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4
 ">
 {data?.products.map((item)=>{
     return(
-        <div className="h-full w-full aspect-square 
+        <button className="h-full w-full aspect-square shadow-lg border rounded-lg
+        hover:shadow-lg hover:scale-95 hover:shadow-slate-300
         flex flex-col items-center justify-center">
             <img src={item.thumbnail} className=" aspect-square md:w-[250px] "/>
               <div className="">{item.brand}</div>
-            <div className="text-lg font-bold">{item.price}$</div>
-        </div>
+              <div className="flex gap-x-2">
+              
+                <div className="">{item.discountPercentage}% off</div>
+                <div className="text-lg font-bold">{item.price}$</div>
+              </div>
+
+        </button>
     )
 })}
 </div>

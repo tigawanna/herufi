@@ -30,6 +30,7 @@
     "vitest": "^0.27.1"
   },
   "dependencies": {
+    "@animxyz/react": "^0.6.7",
     "@tanem/react-nprogress": "^5.0.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

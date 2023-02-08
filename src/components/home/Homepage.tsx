@@ -10,7 +10,7 @@ return (
     <div className="md:w-[30%] h-full  flex items-center justify-center border p-5">
             <img className='h-[300px] w-[300px]' src={cart} height={'200px'} width={'200px'} alt="shopping cart"/>
     </div>
-    <div className='md:w-[55%] '>
+    <div className='md:w-[55%] hidden md:flex '>
         <Categories/>
     </div>
  </div>

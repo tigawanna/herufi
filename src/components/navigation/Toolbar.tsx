@@ -1,9 +1,9 @@
-import { Link } from "rakkasjs";
+import { Link, useLocation } from "rakkasjs";
 import { TheIcon } from "../shared/wrappers/TheIcon";
 import {FaBars,FaTimes} from 'react-icons/fa'
 import { Categories } from "../home/Categories";
 import { ReactModalWrapper } from "../shared/wrappers/ReactModalWrapper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 interface ToolbarProps {
@@ -11,9 +11,14 @@ interface ToolbarProps {
 }
 
 
- const Toolbar = ({}:ToolbarProps) => {
+const Toolbar = ({}:ToolbarProps) => {
+
+const location = useLocation()
 const [isOpen, setIsOpen] = useState(false);
-  
+// close navigation modal on navigate
+useEffect(()=>{
+setIsOpen(false)
+  },[location.current.href])
 
 return (
  <div className='w-full h-full flex items-center justify-between p-1'>

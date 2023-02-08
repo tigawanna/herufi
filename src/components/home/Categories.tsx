@@ -1,5 +1,5 @@
 
-import { navigate } from 'rakkasjs';
+import { Link, navigate } from 'rakkasjs';
 import { categories } from './api';
 
 interface CategoriesProps {
@@ -14,12 +14,12 @@ return (
         flex flex-wrap items-center justify-center gap-2'>
    {categories.map((item)=>{
     return(
-        <button 
-        onClick={()=>navigate('products/'+item)}
+      <Link href={'products/' + item}
+        // onClick={()=>navigate('products/'+item)}
         key={item} className='rounded-xl border  p-2 text-lg
          shadow-lg hover:shadow-lg hover:scale-95 hover:shadow-slate-300 '>
           {item}
-        </button>
+        </Link>
     )
    })}
  </div>

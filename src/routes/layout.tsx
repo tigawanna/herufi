@@ -3,8 +3,9 @@
 import { Head,Layout, UseLocationResult, useLocation } from "rakkasjs";
 
 import '../styles/tailwind.css'
-import { Toolbar } from "./components/navigation/Toolbar";
-import { ReactProgress } from "./components/loaders/ReactProgress";
+import { Toolbar } from "../components/navigation/Toolbar";
+import { ReactProgress } from "../components/loaders/ReactProgress";
+
 
 const MainLayout: Layout = ({ children }) => {
   const location = useLocation()

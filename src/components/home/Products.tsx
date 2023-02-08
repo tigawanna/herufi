@@ -22,9 +22,9 @@ grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4
         <button 
         key={item.id}
         className="h-full w-full aspect-square shadow-lg border rounded-lg
-        hover:shadow-lg hover:scale-95 hover:shadow-slate-300
+        hover:shadow-lg  hover:shadow-slate-300
         flex flex-col items-center justify-center">
-            <img src={item.thumbnail} className=" aspect-square md:w-[250px] "/>
+            <img src={item.thumbnail} className="w-[200px] h-[200px]" height={'200px'} width={'200px'}/>
               <div className="">{item.brand}</div>
               <div className="flex gap-x-2">
               

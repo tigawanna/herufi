@@ -4,8 +4,9 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { IconContext } from "react-icons/lib";
 
 interface ReactModalWrapperProps {
-    isOpen: boolean;
+    open: boolean;
     closeModal: () => void;
+    closebutton?:boolean
     styles?: {
         overlay_bg_color?: string;
         overlay_top?: string;
@@ -24,21 +25,23 @@ interface ReactModalWrapperProps {
     delay?:number
     child: React.ReactNode;
     deps?: any;
+    responsive?:boolean
 }
 
 export const ReactModalWrapper = (
     {
-        isOpen,
+        open,
         closeModal,
+        closebutton=true,
         styles,
         child,
         deps,
-        delay=0
+        responsive=true
     }: ReactModalWrapperProps
 ) => {
     const { isMobile } = useCheckInMobile()
     const adjustSize = (size: string, mobile_size: string) => {
-        return isMobile ? mobile_size : size
+        return (isMobile&&responsive) ? mobile_size : size
     }
     interface ModalStyles {
         overlay: React.CSSProperties,
@@ -73,7 +76,7 @@ export const ReactModalWrapper = (
 
     return (
         <Modal
-            isOpen={isOpen}
+            isOpen={open}
             // onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
             shouldCloseOnOverlayClick={true}
@@ -84,19 +87,18 @@ export const ReactModalWrapper = (
             
  
         >
-            <div 
-            onClick={(event) => event.stopPropagation()}
-            className="w-full flex justify-end">
+   {closebutton?
+   <button type='button' onClick={(event) => event.stopPropagation()} className="w-full flex justify-end">
                 <IconContext.Provider value={{ size: '25' }}>
                     <AiOutlineCloseCircle onClick={closeModal} />
                 </IconContext.Provider>
-            </div>
+ </button>:null}
 
             <div 
                 onClick={(event) => event.stopPropagation()}
             className="h-full w-full overflow-auto scroll-bar">
                 {/* @ts-expect-error */}
-                {React.isValidElement(child) ? React.cloneElement(child, { deps, isOpen }) : child}
+                {React.isValidElement(child) ? React.cloneElement(child, { deps, open }) : child}
             </div>
 
         </Modal>

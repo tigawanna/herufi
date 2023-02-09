@@ -1,4 +1,4 @@
-import { Page, PageProps } from "rakkasjs";
+import { Page, PageProps, useLocation } from "rakkasjs";
 
 const ProductPage: Page = function ProductPage({ params }: PageProps) {
 

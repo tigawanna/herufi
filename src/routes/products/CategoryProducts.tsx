@@ -9,11 +9,9 @@ categ:string
 export const CategoryProducts = ({categ}:CategoryProductsProps) => {
  const { data, refetch } = useServerSideQuery(
 ()=>{
-         if (typeof categ !== "string") {
-
-             throw new Error("Invalid request , param categ must be of type string");
-         }
-
+if (typeof categ !== "string") {
+  throw new Error("Invalid request , param categ must be of type string");
+}
     return getProductsByCategory(categ)
 },
 {

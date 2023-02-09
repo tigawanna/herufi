@@ -2,7 +2,7 @@
 
 import { Head,Layout } from "rakkasjs";
 
-const ProductLayout: Layout = ({ children }) => {
+const ProductsLayout: Layout = ({ children }) => {
 
 
   return (
@@ -22,4 +22,4 @@ const ProductLayout: Layout = ({ children }) => {
   </>
 );}
 
-export default ProductLayout;
+export default ProductsLayout;

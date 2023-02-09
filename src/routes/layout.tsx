@@ -6,9 +6,7 @@ import '../styles/tailwind.css'
 import '@animxyz/core'
 import { ReactProgress } from "../components/loaders/ReactProgress";
 import { lazy } from "react";
-import Toolbar from "../components/navigation/Toolbar";
-
-// const Toolbar = lazy(() => import("../components/navigation/Toolbar"));
+const Toolbar = lazy(() => import("../components/navigation/Toolbar"));
 
 
 const MainLayout: Layout = ({ children }) => {

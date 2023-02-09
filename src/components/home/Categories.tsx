@@ -1,8 +1,7 @@
 
-import { Link, navigate } from 'rakkasjs';
+import { Link } from 'rakkasjs';
 import { categories } from './api';
 import { useLocation } from 'rakkasjs';
-import { XyzTransitionGroup } from '@animxyz/react'
 interface CategoriesProps {
 
 }

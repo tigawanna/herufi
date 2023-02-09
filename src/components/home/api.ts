@@ -71,7 +71,7 @@ export const categories = [
 ] as const
 
 
-export async function getProductsyCategory(category:string){
+export async function getProductsByCategory(category:string){
 let headersList = {
  "Accept": "*/*",
 //  "User-Agent": "Thunder Client (https://www.thunderclient.com)"
@@ -88,4 +88,5 @@ return await response.json() as Main
 }
 
 }
+
 

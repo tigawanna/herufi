@@ -2,9 +2,8 @@ import { Link, useLocation } from "rakkasjs";
 import { TheIcon } from "../shared/wrappers/TheIcon";
 import {FaBars,FaTimes} from 'react-icons/fa'
 import { Categories } from "../home/Categories";
-import { ReactModalWrapper } from "../shared/wrappers/ReactModalWrapper";
-import { useEffect, useState } from "react";
-
+import { lazy, useEffect, useState } from "react";
+const ReactModalWrapper = lazy(() => import('./../shared/wrappers/ReactModalWrapper'))
 
 interface ToolbarProps {
 

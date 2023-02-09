@@ -28,7 +28,7 @@ interface ReactModalWrapperProps {
     responsive?:boolean
 }
 
-export const ReactModalWrapper = (
+ const ReactModalWrapper = (
     {
         open,
         closeModal,
@@ -89,10 +89,10 @@ export const ReactModalWrapper = (
         >
    {closebutton?
    <button type='button' onClick={(event) => event.stopPropagation()} className="w-full flex justify-end">
-                <IconContext.Provider value={{ size: '25' }}>
-                    <AiOutlineCloseCircle onClick={closeModal} />
-                </IconContext.Provider>
- </button>:null}
+        <IconContext.Provider value={{ size: '25' }}>
+            <AiOutlineCloseCircle onClick={closeModal} />
+        </IconContext.Provider>
+    </button>:null}
 
             <div 
                 onClick={(event) => event.stopPropagation()}
@@ -105,7 +105,7 @@ export const ReactModalWrapper = (
     );
 }
 
-
+export default ReactModalWrapper
 
 
 

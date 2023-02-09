@@ -36,7 +36,7 @@ let headersList = {
 }
 
 try {
- const  response = await fetch("https://dummyjson.com/products?limit=10&skip=10", { 
+ const  response = await fetch("https://dummyjson.com/products?limit=50", { 
   method: "GET",
   headers: headersList
 });
@@ -88,5 +88,24 @@ return await response.json() as Main
 }
 
 }
+
+export async function getOneProduct(id:number){
+let headersList = {
+ "Accept": "*/*",
+//  "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+}
+
+try {
+ const  response = await fetch(`https://dummyjson.com/products/${id}`, { 
+  method: "GET",
+  headers: headersList
+});
+return await response.json() as ProductType
+} catch (error) {
+    console.log("massive error ",error)
+}
+
+}
+
 
 

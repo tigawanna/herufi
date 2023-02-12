@@ -19,7 +19,7 @@ return (
     <div className='w-[95%] h-full flex items-center justify-center'>
         <div className="w-full p-2
             grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
-            {data?.products.map((item) => {
+            {data?.products.map((item: ProductType) => {
                 return (
                     <Link href={pathName(item)+item.id}
                         key={item.id}
@@ -27,7 +27,7 @@ return (
                         hover:shadow-lg  hover:shadow-slate-300
                         flex flex-col items-center justify-center">
                         <img src={item.thumbnail} loading="lazy"
-                            className="w-[400px] h-[400px] md:w-[200px] md:h-[200px]" height={'200px'} width={'200px'} />
+                            className="w-[400px] h-[400px] md:w-[200px] md:h-[200px]" height={'100px'} width={'100px'} />
                         <div className="">{item.brand}</div>
                         <div className="flex gap-x-2">
 

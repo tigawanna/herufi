@@ -34,14 +34,18 @@ const BreadCrumbs = ({ }: breadcrumbsProps) => {
 
                 if (((locations.length - 1) === index) || index === 0) {
                     return (
-                        <StyledLink href={location.current.origin + getNewPathname(locations, index)}
+                        <StyledLink 
+                        key={index}
+                        href={location.current.origin + getNewPathname(locations, index)}
                             activeStyle={{ color: 'purple' }} className="w-fit">{item}</StyledLink>
 
                     )
                 }
 
                 return (
-                    <StyledLink href={location.current.origin + getNewPathname(locations, index)}
+                    <StyledLink 
+                    key={index}
+                    href={location.current.origin + getNewPathname(locations, index)}
                         activeStyle={{ color: 'purple' }} className="w-fit">{item}{'>'}</StyledLink>)
 
 

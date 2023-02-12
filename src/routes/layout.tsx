@@ -1,12 +1,13 @@
 // This is the main layout of our app. It renders the header and the footer.
 
-import { Head,Layout, UseLocationResult, useLocation } from "rakkasjs";
+import { ClientSuspense, Head,Layout, ResponseHeaders, UseLocationResult, useLocation } from "rakkasjs";
 
 import '../styles/tailwind.css'
 import '@animxyz/core'
 import { ReactProgress } from "../components/loaders/ReactProgress";
 import { lazy } from "react";
 const Toolbar = lazy(() => import("../components/navigation/Toolbar"));
+import { headerConfig } from './../headers';
 
 
 const MainLayout: Layout = ({ children }) => {
@@ -30,8 +31,10 @@ const MainLayout: Layout = ({ children }) => {
          bg-opacity-70 dark:bg-opacity-90 max-h-[50px] p-1 px-2
          fixed top-0 z-40 text-white"
       >
+        <ClientSuspense fallback="">
           <Toolbar/>
           <ReactProgress isAnimating={isanumating(location)} />
+          </ClientSuspense>
       </div>
     </header>
 
@@ -45,3 +48,8 @@ const MainLayout: Layout = ({ children }) => {
 );}
 
 export default MainLayout;
+
+export function headers(){
+  return headerConfig
+}
+

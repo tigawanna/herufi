@@ -1,7 +1,8 @@
 import React from 'react'
 import Modal from 'react-modal';
-import { AiOutlineCloseCircle } from 'react-icons/ai'
-import { IconContext } from "react-icons/lib";
+import { AiOutlineCloseCircle } from 'react-icons/ai/index.js'
+import { IconContext } from 'react-icons';
+
 
 interface ReactModalWrapperProps {
     open: boolean;

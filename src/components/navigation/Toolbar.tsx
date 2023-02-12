@@ -1,8 +1,9 @@
-import { Link, useLocation } from "rakkasjs";
+import { ClientSuspense, Link, useLocation } from "rakkasjs";
 import { TheIcon } from "../shared/wrappers/TheIcon";
-import {FaBars,FaTimes} from 'react-icons/fa'
+import {FaBars,FaTimes} from 'react-icons/fa/index.js'
 import { Categories } from "../home/Categories";
 import { lazy, useEffect, useState } from "react";
+
 const ReactModalWrapper = lazy(() => import('./../shared/wrappers/ReactModalWrapper'))
 
 interface ToolbarProps {
@@ -39,6 +40,7 @@ return (
     
             </ul>
         </nav>
+        <ClientSuspense fallback="">
         <ReactModalWrapper
             child={
             <nav className="w-full  flex item-center gap-1 ">
@@ -60,6 +62,7 @@ return (
                 content_left: '0%',
                 content_top: '2%',
             }} />
+            </ClientSuspense>
 
  </div>
 );

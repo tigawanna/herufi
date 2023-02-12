@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconType } from 'react-icons';
-import { IconContext } from "react-icons/lib";
+import { IconContext } from "react-icons";
 interface TheIconProps {
     Icon: IconType;
     size?: string;

@@ -3,7 +3,7 @@
 import { ClientSuspense, Head,Layout, ResponseHeaders, UseLocationResult, useLocation } from "rakkasjs";
 
 import '../styles/tailwind.css'
-import '@animxyz/core'
+
 import { ReactProgress } from "../components/loaders/ReactProgress";
 import { lazy } from "react";
 const Toolbar = lazy(() => import("../components/navigation/Toolbar"));

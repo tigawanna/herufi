@@ -36,7 +36,7 @@ let headersList = {
 }
 
 try {
- const  response = await fetch("https://dummyjson.com/products?limit=50", { 
+ const  response = await fetch("https://dummyjson.com/products?limit=8&skip=4", { 
   method: "GET",
   headers: headersList
 });
